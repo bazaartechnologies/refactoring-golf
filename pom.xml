@@ -12,13 +12,59 @@
     <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
-        <version>4.4</version>
+        <version>4.13.2</version>
         <scope>test</scope>
     </dependency>
     </dependencies>
     <properties>
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
+        <maven.compiler.source>18</maven.compiler.source>
+        <maven.compiler.target>18</maven.compiler.target>
     </properties>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>hole1/src/main/java</source>
+                                <source>hole2/src/main/java</source>
+                                <source>hole3/src/main/java</source>
+                                <source>hole4/src/main/java</source>
+                                <source>hole5/src/main/java</source>
+                                <source>hole6/src/main/java</source>
+                                <source>hole7/src/main/java</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>add-test-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>hole1/src/test/java</source>
+                                <source>hole2/src/test/java</source>
+                                <source>hole3/src/test/java</source>
+                                <source>hole4/src/test/java</source>
+                                <source>hole5/src/test/java</source>
+                                <source>hole6/src/test/java</source>
+                                <source>hole7/src/test/java</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+
+            </plugin>
+        </plugins>
+    </build>
 </project>
