@@ -29,6 +29,7 @@
                 <version>3.0.0</version>
                 <executions>
                     <execution>
+                        <id>generate-sources</id>
                         <phase>generate-sources</phase>
                         <goals>
                             <goal>add-source</goal>
@@ -46,6 +47,7 @@
                         </configuration>
                     </execution>
                     <execution>
+                        <id>generate-test-sources</id>
                         <phase>generate-test-sources</phase>
                         <goals>
                             <goal>add-test-source</goal>
