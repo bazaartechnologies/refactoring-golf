@@ -21,14 +21,13 @@ class TakeHomeCalculator {
              total = total.plus(next);
         }
 
-        for (Money next : monies) {
-            total = total.plus(next);
-        }
-
         Double amount = total.value * (percent / 100d);
         Money tax = new Money(amount.intValue(), first.currency);
 
-        total.plus(tax);
+        if (!total.currency.equals(tax.currency)) {
+            throw new Incalculable();
+        }
+
         return new Money(total.value - tax.value, first.currency);
     }
 
